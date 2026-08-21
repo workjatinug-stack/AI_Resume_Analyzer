@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline { --font-sans: 'DM Sans', sans-serif; --font-display: 'Manrope', sans-serif; --color-background: #f7f8fc; --color-foreground: #0f172a; --color-card: #ffffff; --color-card-foreground: #0f172a; --color-border: #e2e8f0; --color-muted: #f1f5f9; --color-muted-foreground: #64748b; --color-primary: #4f46e5; --color-primary-foreground: #ffffff; --radius: 1rem; }
+:root { font-family: 'DM Sans', sans-serif; color: #0f172a; background: #f7f8fc; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { border-color: #e2e8f0; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #f7f8fc; }
+button, a { transition: all 180ms cubic-bezier(.23,1,.32,1); }
+button:active { transform: scale(.98); }
+.font-display { font-family: 'Manrope', sans-serif; }
+.container { width: 100%; margin: 0 auto; padding-left: 1.25rem; padding-right: 1.25rem; }
+.logo-mark { position: relative; display: grid; width: 2.5rem; height: 2.5rem; place-items: center; overflow: hidden; border: 1px solid rgba(255,255,255,.18); border-radius: 1rem; background: linear-gradient(145deg, #18243d, #0f172a 62%, #111827); color: white; box-shadow: 0 10px 22px rgba(15,23,42,.2), inset 0 1px rgba(255,255,255,.14); transition: transform 180ms cubic-bezier(.23,1,.32,1), box-shadow 180ms cubic-bezier(.23,1,.32,1); }
+.group:hover .logo-mark { transform: translateY(-2px) rotate(-3deg); box-shadow: 0 14px 26px rgba(15,23,42,.25), inset 0 1px rgba(255,255,255,.18); }
+.logo-mark__orbit { position: absolute; width: 1.9rem; height: .78rem; border: 1px solid rgba(165,180,252,.6); border-radius: 999px; transform: rotate(-38deg); }
+.logo-mark__orbit::after { content: ''; position: absolute; top: -.2rem; right: .08rem; width: .3rem; height: .3rem; border-radius: 999px; background: #a5b4fc; box-shadow: 0 0 9px #a5b4fc; }
+.logo-mark__core { position: relative; z-index: 1; display: grid; width: 1.45rem; height: 1.45rem; place-items: center; border: 1px solid rgba(255,255,255,.22); border-radius: .55rem; background: rgba(79,70,229,.92); box-shadow: 0 0 0 4px rgba(99,102,241,.12); }
+.logo-mark__signal { position: absolute; right: .4rem; bottom: .42rem; width: .22rem; height: .22rem; border-radius: 999px; background: #67e8f9; box-shadow: 0 0 8px #67e8f9; }
+@media (min-width: 640px) { .container { max-width: 640px; } }
+@media (min-width: 768px) { .container { max-width: 768px; } }
+@media (min-width: 1024px) { .container { max-width: 1024px; } }
+@media (min-width: 1280px) { .container { max-width: 1180px; } }
+.hero-grid { background: radial-gradient(circle at 78% 32%, rgba(129,140,248,.17), transparent 27rem), radial-gradient(circle at 20% 65%, rgba(224,231,255,.65), transparent 25rem); }
+.hero-grid:after { content: ''; position: absolute; inset: 0; opacity: .35; pointer-events: none; background-image: linear-gradient(rgba(99,102,241,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,.06) 1px, transparent 1px); background-size: 44px 44px; mask-image: linear-gradient(to bottom, black, transparent 80%); }
+.eyebrow { color: #4f46e5; font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.section-title { font-family: 'Manrope', sans-serif; font-size: clamp(2rem,4vw,3.3rem); font-weight: 600; line-height: 1.08; letter-spacing: -.05em; }
+.score-ring { display: grid; place-items: center; border-radius: 999px; background: conic-gradient(#4f46e5 0deg 295deg, #e0e7ff 295deg 360deg); }
+.score-ring-inner { display: grid; place-items: center; align-content: center; width: calc(100% - 12px); height: calc(100% - 12px); border-radius: 999px; background: white; }
+.score-ring-inner strong { font-family: 'Manrope', sans-serif; font-size: 2rem; letter-spacing: -.08em; }
+.score-ring-inner span { font-size: .7rem; color: #94a3b8; }
+.keyword-matched { color: #047857; background: #d1fae5; }
+.keyword-missing { color: #b45309; background: #fef3c7; }
+.keyword-overused { color: #be123c; background: #ffe4e6; }
+::selection { background: #c7d2fe; color: #312e81; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }

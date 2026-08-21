@@ -1,0 +1,28 @@
+# Project TODO
+
+- [x] Build polished landing page with hero, feature highlights, navigation, and start-analyzing CTA
+- [x] Build analyzer workspace with paste-text resume input
+- [x] Add client-side PDF text extraction
+- [x] Add client-side DOCX text extraction
+- [x] Add optional target role and job description inputs
+- [x] Add secure backend LLM analysis procedure using the provided master prompt
+- [x] Add strict structured JSON response validation for all required analysis fields
+- [x] Add six score dimensions: job alignment, skills evidence, achievement strength, clarity, structure, and ATS compatibility
+- [x] Add results dashboard with overall score gauge and score cards
+- [x] Add strengths and improvement panels with priorities and evidence quotes
+- [x] Add differentiated matched, missing, and overused keyword badge groups
+- [x] Add side-by-side bullet rewrite comparisons
+- [x] Add prioritized action plan with expected benefits
+- [x] Add session-based analysis history without requiring account creation
+- [x] Add history revisit and restore flow
+- [x] Add responsive, accessible, loading, empty, and error states
+- [x] Add Vitest coverage for analysis validation and history behavior
+- [x] Run type checks, tests, and visual verification
+- [x] Save final checkpoint after all completed items are marked done
+- [x] Configure PDF.js worker setup and verify PDF extraction in-browser
+- [x] Replace the shortened backend prompt with the provided master prompt aligned to the required schema and weights
+- [x] Render evidence quotes in the areas-for-improvement panel
+- [x] Use session-scoped history storage to match the session-based requirement
+- [x] Make the upload control keyboard-accessible with semantic controls
+- [x] Add Vitest coverage for history save/load behavior
+- [x] Save the final project checkpoint after the gap fixes are validated
