@@ -8,6 +8,8 @@ import App from "./App";
 import { startLogin } from "./const";
 import "./index.css";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "/api/trpc";
+
 const queryClient = new QueryClient();
 
 const redirectToLoginIfUnauthorized = (error: unknown) => {
@@ -40,7 +42,7 @@ queryClient.getMutationCache().subscribe(event => {
 const trpcClient = trpc.createClient({
   links: [
     httpBatchLink({
-      url: "/api/trpc",
+      url: BACKEND_URL,
       transformer: superjson,
       headers() {
         // Preview auto-login fallback: when the browser blocks iframe cookies
@@ -65,7 +67,7 @@ const trpcClient = trpc.createClient({
       fetch(input, init) {
         return globalThis.fetch(input, {
           ...(init ?? {}),
-          credentials: "include",
+          credentials: BACKEND_URL.startsWith("http") ? "include" : "same-origin",
         });
       },
     }),

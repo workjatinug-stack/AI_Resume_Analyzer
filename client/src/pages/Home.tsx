@@ -49,7 +49,15 @@ export default function Home() {
       setHistory(next); sessionStorage.setItem(HISTORY_KEY, serializeHistory(next));
       toast.success("Your resume review is ready.");
     },
-    onError: (error) => toast.error(error.message || "Analysis failed. Please try again."),
+    onError: (error) => {
+      // Check if error is due to missing backend configuration
+      const errorMessage = error.message || "Analysis failed. Please try again.";
+      if (errorMessage.includes("fetch") || errorMessage.includes("network") || errorMessage.includes("Unexpected token")) {
+        toast.error("Backend not configured. Please set VITE_BACKEND_URL environment variable or deploy the backend server.");
+      } else {
+        toast.error(errorMessage);
+      }
+    },
   });
 
   const score = result?.overall_score ?? 0;
